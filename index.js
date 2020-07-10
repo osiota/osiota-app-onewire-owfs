@@ -7,8 +7,10 @@ exports.init = function(node, app_config, main) {
 		var file = "/" + sid.replace(/-/, ".") + "/temperature";
 		var t = setInterval(function() {
 			connection.read(file, function(err, temp) {
-				//console.log(sid, "temperature", temp);
-				node.publish(undefined, temp);
+				//console.log(sid, "temperature", +temp);
+				if (typeof temp !== "undefined") {
+					node.publish(undefined, +temp);
+				}
 			});
 		}, (app_config.interval || 5) * 1000);
 		timer.push(t);
