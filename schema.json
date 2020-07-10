@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft/2019-09/schema#",
+	"type": "object",
+	"title": "osiota application onewire-owfs",
+	"description": "This application collects temperature values (and other data) from One-Wire devices via owfs (onewire filesystem).",
+	"properties": {
+		"map": {
+			"type": "array",
+			"description": "Device mapping",
+			"items": {
+				"type": "object",
+				"description": "Debug output text",
+				"properties": {
+					"map": {
+						"type": "string",
+						"description": "One-Wire device id"
+					},
+					"node": {
+						"type": "string",
+						"description": "Node name to publish data to"
+					},
+					"metadata": {
+						"type": "object",
+						"description": "metadata for that device",
+						"default": {
+							"type": "temperature.data",
+							"unit": "C",
+							"unit_long": "Celsius"
+						},
+						"additionalProperties": true
+					}
+				},
+				"examples": [
+					{
+						"map": "28-0123456789ab",
+						"node": "/Außen/Außentemperatur",
+						"metadata": {
+							"type": "temperature.data",
+							"unit": "C",
+							"unit_long": "Celsius"
+						}
+					}
+				]
+			}
+		},
+		"host": {
+			"type": "string",
+			"description": "Host name of the owserver",
+			"default": "localhost"
+		},
+		"port": {
+			"type": "number",
+			"description": "Port of the owserver",
+			"default": 4304
+		}
+	}
+}

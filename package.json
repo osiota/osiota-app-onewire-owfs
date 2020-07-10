@@ -1,0 +1,18 @@
+{
+  "name": "osiota-app-onewire-owfs",
+  "version": "1.0.0",
+  "description": "This application collects temperature values (and other data) from One-Wire devices via owfs (onewire filesystem)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Walz and others",
+  "license": "MIT",
+  "dependencies": {
+    "owfs": "^0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osiota/osiota-app-onewire-owfs.git"
+  }
+}
