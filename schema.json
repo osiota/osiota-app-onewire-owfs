@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft/2019-09/schema#",
 	"type": "object",
 	"title": "osiota application onewire-owfs",
-	"description": "This application collects temperature values (and other data) from One-Wire devices via owfs (onewire filesystem).",
+	"description": "This application collects temperature values (and other data) from 1-Wire devices via owfs (1-Wire filesystem).",
 	"properties": {
 		"map": {
 			"type": "array",
@@ -13,7 +13,7 @@
 				"properties": {
 					"map": {
 						"type": "string",
-						"description": "One-Wire device id"
+						"description": "1-Wire device id"
 					},
 					"node": {
 						"type": "string",
@@ -21,7 +21,7 @@
 					},
 					"metadata": {
 						"type": "object",
-						"description": "metadata for that device",
+						"description": "Metadata for that device",
 						"default": {
 							"type": "temperature.data",
 							"unit": "C",

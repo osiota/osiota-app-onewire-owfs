@@ -1,7 +1,7 @@
 {
   "name": "osiota-app-onewire-owfs",
   "version": "1.0.0",
-  "description": "This application collects temperature values (and other data) from One-Wire devices via owfs (onewire filesystem)",
+  "description": "This application collects temperature values (and other data) from 1-Wire devices via owfs (1-Wire filesystem)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

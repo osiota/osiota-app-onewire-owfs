@@ -6,7 +6,7 @@
 ## Configuration: onewire-owfs
 
 
-This application collects temperature values (and other data) from One-Wire devices via owfs (onewire filesystem).
+This application collects temperature values (and other data) from 1-Wire devices via owfs (1-Wire filesystem).
 
 **Properties**
 
@@ -51,9 +51,9 @@ Debug output text
 
 |Name|Description|Type|
 |----|-----------|----|
-|map|One-Wire device id<br/>|string|
+|map|1-Wire device id<br/>|string|
 |node|Node name to publish data to<br/>|string|
-|[metadata](#map[].metadata)|metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
+|[metadata](#map[].metadata)|Metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
 
 **Example**
 
@@ -74,7 +74,7 @@ Debug output text
 <a name="map[].metadata"></a>
 #### map\[\]\.metadata:
 
-metadata for that device
+Metadata for that device
 
 
 **Additional Properties:** `true`<br/>
