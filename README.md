@@ -37,7 +37,7 @@ This application collects temperature values (and other data) from One-Wire devi
 ```
 
 <a name="map[]"></a>
-### map\[\]: 
+### map\[\]:
 
 Device mapping
 
@@ -46,13 +46,14 @@ Device mapping
 
 
 Debug output text
+
 **Item Properties**
 
 |Name|Description|Type|
 |----|-----------|----|
 |map|One-Wire device id<br/>|string|
 |node|Node name to publish data to<br/>|string|
-|[metadata](#map[][].metadata)|metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
+|[metadata](#map[].metadata)|metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
 
 **Example**
 
@@ -70,8 +71,8 @@ Debug output text
 ]
 ```
 
-<a name="map[][].metadata"></a>
-#### map\[\]\[\]\.metadata: 
+<a name="map[].metadata"></a>
+#### map\[\]\.metadata:
 
 metadata for that device
 
