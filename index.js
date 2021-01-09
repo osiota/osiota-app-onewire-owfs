@@ -4,12 +4,26 @@ exports.init = function(node, app_config, main) {
 	var timer = [];
 
 	var get_temperature_interval = function(node, sid) {
-		var file = "/" + sid.replace(/-/, ".") + "/temperature";
+		var file = "/" + sid + "/temperature";
+		var still_active = null;
 		var t = setInterval(function() {
+			if (still_active) {
+				console.log("owfs:", sid,
+					"interval still active since",
+					still_active);
+				return;
+			}
+			still_active = new Date();
 			connection.read(file, function(err, temp) {
+				still_active = null;
+				if (err) {
+					console.error("OWFS", err.stack || err);
+				}
 				//console.log(sid, "temperature", +temp);
 				if (typeof temp !== "undefined") {
 					node.publish(undefined, +temp);
+				} else {
+					node.publish(undefined, null);
 				}
 			});
 		}, (app_config.interval || 5) * 1000);
@@ -40,8 +54,7 @@ exports.init = function(node, app_config, main) {
 		}
 		//console.log(directory);
 		directory.forEach(function(file) {
-			let sid = file.replace(/^\//, "")
-					.replace(/\./, "-");
+			let sid = file.replace(/^\//, "");
 			var n = map.node(sid);
 			if (!n) return;
 		});

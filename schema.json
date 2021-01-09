@@ -13,7 +13,7 @@
 				"properties": {
 					"map": {
 						"type": "string",
-						"description": "1-Wire device id"
+						"description": "1-Wire device id (in format from OWFS)"
 					},
 					"node": {
 						"type": "string",
@@ -32,7 +32,7 @@
 				},
 				"examples": [
 					{
-						"map": "28-0123456789ab",
+						"map": "28.AB8976452301",
 						"node": "/Außen/Außentemperatur",
 						"metadata": {
 							"type": "temperature.data",

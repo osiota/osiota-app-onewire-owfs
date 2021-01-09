@@ -22,7 +22,7 @@ This application collects temperature values (and other data) from 1-Wire device
 {
     "map": [
         {
-            "map": "28-0123456789ab",
+            "map": "28.AB8976452301",
             "node": "/Außen/Außentemperatur",
             "metadata": {
                 "type": "temperature.data",
@@ -60,7 +60,7 @@ Debug output text
 ```json
 [
     {
-        "map": "28-0123456789ab",
+        "map": "28.AB8976452301",
         "node": "/Außen/Außentemperatur",
         "metadata": {
             "type": "temperature.data",
