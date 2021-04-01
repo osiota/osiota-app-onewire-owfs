@@ -32,7 +32,7 @@
 				},
 				"examples": [
 					{
-						"map": "28.AB8976452301",
+						"map": "28.AB8967452301",
 						"node": "/Außen/Außentemperatur",
 						"metadata": {
 							"type": "temperature.data",
