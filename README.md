@@ -1,3 +1,11 @@
+<!--
+Auto generated documentation:
+  * Adapt schema.json and
+  * Run npm run doc
+
+Please edit schema.json or
+	https://github.com/simonwalz/osiota-dev/blob/master/partials/main.md
+-->
 <a name="root"></a>
 # osiota application onewire-owfs
 
@@ -12,7 +20,7 @@ This application collects temperature values (and other data) from 1-Wire device
 
 |Name|Description|Type|
 |----|-----------|----|
-|[map](#map[])|Device mapping<br/>|object\[\]|
+|[map](#map)|Device mapping<br/>|object\[\]|
 |host|Host name of the owserver<br/><br/>Default: `"localhost"`|string|
 |port|Port of the owserver<br/><br/>Default: `4304`|number|
 
@@ -22,7 +30,7 @@ This application collects temperature values (and other data) from 1-Wire device
 {
     "map": [
         {
-            "map": "28.AB8976452301",
+            "map": "28.AB8967452301",
             "node": "/Außen/Außentemperatur",
             "metadata": {
                 "type": "temperature.data",
@@ -36,7 +44,7 @@ This application collects temperature values (and other data) from 1-Wire device
 }
 ```
 
-<a name="map[]"></a>
+<a name="map"></a>
 ### map\[\]:
 
 Device mapping
@@ -51,16 +59,16 @@ Debug output text
 
 |Name|Description|Type|
 |----|-----------|----|
-|map|1-Wire device id<br/>|string|
+|map|1-Wire device id (in format from OWFS)<br/>|string|
 |node|Node name to publish data to<br/>|string|
-|[metadata](#map[].metadata)|Metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
+|[metadata](#mapmetadata)|Metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
 
 **Example**
 
 ```json
 [
     {
-        "map": "28.AB8976452301",
+        "map": "28.AB8967452301",
         "node": "/Außen/Außentemperatur",
         "metadata": {
             "type": "temperature.data",
@@ -71,7 +79,7 @@ Debug output text
 ]
 ```
 
-<a name="map[].metadata"></a>
+<a name="mapmetadata"></a>
 #### map\[\]\.metadata:
 
 Metadata for that device
