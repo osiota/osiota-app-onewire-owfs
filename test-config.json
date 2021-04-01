@@ -1,0 +1,10 @@
+{
+	"app": [{
+		"name": "onewire-owfs",
+		"config": {
+			"node": "/Temperaturen",
+			"host": "192.168.188.49",
+			"map": []
+		}
+	}]
+}
