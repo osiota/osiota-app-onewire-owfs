@@ -20,9 +20,9 @@ This application collects temperature values (and other data) from 1-Wire device
 
 |Name|Description|Type|
 |----|-----------|----|
-|[map](#map)|Device mapping<br/>|object\[\]|
-|host|Host name of the owserver<br/><br/>Default: `"localhost"`|string|
-|port|Port of the owserver<br/><br/>Default: `4304`|number|
+|[`map`](#map)|Device mapping<br/>|object\[\]|
+|`host`|Host name of the owserver<br/>Default: `"localhost"`<br/>|string|
+|`port`|Port of the owserver<br/>Default: `4304`<br/>|number|
 
 **Example**
 
@@ -59,9 +59,9 @@ Debug output text
 
 |Name|Description|Type|
 |----|-----------|----|
-|map|1-Wire device id (in format from OWFS)<br/>|string|
-|node|Node name to publish data to<br/>|string|
-|[metadata](#mapmetadata)|Metadata for that device<br/><br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`|object|
+|`map`|1-Wire device id (in format from OWFS)<br/>|string|
+|`node`|Node name to publish data to<br/>|string|
+|[`metadata`](#mapmetadata)|Metadata for that device<br/>Default: `{"type":"temperature.data","unit":"C","unit_long":"Celsius"}`<br/>|object|
 
 **Example**
 
