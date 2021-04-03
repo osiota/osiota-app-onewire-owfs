@@ -6,10 +6,10 @@
 	"properties": {
 		"map": {
 			"type": "array",
-			"description": "Device mapping",
+			"description": "Device mappings",
 			"items": {
 				"type": "object",
-				"description": "Debug output text",
+				"title": "Device mapping",
 				"properties": {
 					"map": {
 						"type": "string",
@@ -30,6 +30,8 @@
 						"additionalProperties": true
 					}
 				},
+				"required": [ "map" ],
+				"additionalProperties": false,
 				"examples": [
 					{
 						"map": "28.AB8967452301",
@@ -45,13 +47,17 @@
 		},
 		"host": {
 			"type": "string",
+			"title": "Host",
 			"description": "Host name of the owserver",
 			"default": "localhost"
 		},
 		"port": {
 			"type": "number",
+			"title": "Port",
 			"description": "Port of the owserver",
 			"default": 4304
 		}
-	}
+	},
+	"required": [],
+	"additionalProperties": false
 }
