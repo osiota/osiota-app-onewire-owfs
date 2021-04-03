@@ -1,6 +1,6 @@
 {
   "name": "osiota-app-onewire-owfs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This application collects temperature values (and other data) from 1-Wire devices via owfs (1-Wire filesystem)",
   "main": "index.js",
   "scripts": {
