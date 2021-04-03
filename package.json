@@ -17,6 +17,6 @@
     "url": "https://github.com/osiota/osiota-app-onewire-owfs.git"
   },
   "devDependencies": {
-    "osiota-dev": "^1.2.1"
+    "osiota-dev": "^1.2.2"
   }
 }
