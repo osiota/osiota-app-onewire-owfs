@@ -8,10 +8,13 @@ exports.init = function(node, app_config, main) {
 		var still_active = null;
 		var t = setInterval(function() {
 			if (still_active) {
-				console.log("owfs:", sid,
-					"interval still active since",
-					still_active);
-				return;
+				var diff = (new Date() - d)/1000;
+				if (diff < 120)
+					console.log("owfs:", sid,
+						"interval still active since",
+						still_active);
+					return;
+				}
 			}
 			still_active = new Date();
 			connection.read(file, function(err, temp) {
