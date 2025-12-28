@@ -20,7 +20,7 @@ exports.init = function(node, app_config, main) {
 			connection.read(file, function(err, temp) {
 				still_active = null;
 				if (err) {
-					console.error("OWFS", err.stack || err);
+					console.error("OWFS", sid, err);
 				}
 				//console.log(sid, "temperature", +temp);
 				if (typeof temp !== "undefined") {
@@ -42,6 +42,8 @@ exports.init = function(node, app_config, main) {
 		function(n, metadata, c) {
 			var sid = c.map;
 
+			if (c.deactive) return;
+
 			get_temperature_interval(n, sid);
 
 			n.announce([{
@@ -52,7 +54,7 @@ exports.init = function(node, app_config, main) {
 	});
 	connection.dirall("/", function(err, directory) {
 		if (err) {
-			console.error("owfs Error", err.stack || err);
+			console.error("owfs Error", err);
 			return;
 		}
 		//console.log(directory);
