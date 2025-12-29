@@ -9,7 +9,7 @@ exports.init = function(node, app_config, main) {
 		var t = setInterval(function() {
 			if (still_active) {
 				var diff = (new Date() - d)/1000;
-				if (diff < 120)
+				if (diff < 120) {
 					console.log("owfs:", sid,
 						"interval still active since",
 						still_active);
