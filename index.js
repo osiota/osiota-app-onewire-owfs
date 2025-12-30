@@ -17,14 +17,18 @@ exports.init = function(node, app_config, main) {
 
 	function read(file) {
 		const p = new Promise((resolve, reject)=>{
+			const t_start = new Date();
 			const read_tid = setTimeout(()=>{
 				reject(new Error("OWFS Timed out"));
 			}, 4000);
-			connection.read(file, (err, result) => {
+			connection.read(file, (err, data) => {
 				if (err) {
 					reject(err);
 				} else {
-					resolve(result);
+					resolve({
+						data: data,
+						time_delta: new Date() - t_start
+					});
 				}
 				clearTimeout(read_tid);
 			});
@@ -41,13 +45,12 @@ exports.init = function(node, app_config, main) {
 			if (!n) return;
 
 			try {
-				console.log("READ", sid);
-				let temp = await read(file + "/temperature");
-				console.log("TEMP", sid, temp);
-				if (typeof temp === "string") {
-					temp = +temp;
+				let {data, time_delta} = await read(file + "/temperature");
+				if (typeof data === "string") {
+					data = +data;
 				}
-				node.publish(undefined, +temp);
+				console.log("TEMP", sid, data, time_delta);
+				node.publish(undefined, data);
 			} catch(err) {
 				if (err === "canceled") return;
 				console.error("OWFS", sid, err);
