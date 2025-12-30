@@ -50,7 +50,7 @@ exports.init = function(node, app_config, main) {
 					data = +data;
 				}
 				console.log("TEMP", sid, data, time_delta);
-				node.publish(undefined, data);
+				n.publish(undefined, data);
 			} catch(err) {
 				if (err === "canceled") return;
 				console.error("OWFS", sid, err);
